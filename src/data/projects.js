@@ -6,7 +6,7 @@ export const projects = [
     description:
       "A full-featured e-commerce platform with product listing, cart, authentication, and payment gateway integration.",
     technologies: ["React JS", "Tailwind CSS", "MongoDB", "Express.js", "Firebase"],
-    link: "https://example.com/ecommerce",
+    link: "https://github.com/Gkishan5499/E-commerce",
     image: "/images/ecommerce.png", // place your image relatedin /public/images/
   },
   {
@@ -41,4 +41,12 @@ export const projects = [
     link: "https://papumparejungleresort.com/",
     image: "/images/jungle.png",
   },
+    {
+    title: "Blog Web App",
+    description:
+      " A blogging platform where users can create, edit, and delete posts, with user authentication and comment functionality.",
+    technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+    link: "https://gautam-stack-blog.onrender.com/sign-in",
+    image: "/images/blogs.png",
+  }
 ];

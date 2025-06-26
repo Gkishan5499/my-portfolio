@@ -1,12 +1,43 @@
-import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Label } from "@radix-ui/react-label";
+import emailjs from "@emailjs/browser"
 
 export default function FooterAnimation() {
+  const form = useRef();
+  const [message , setMessage]=useState("");
+  const [erorrMessage , setErroMessage]=useState("");
+  
+
+  const sendEmail= (e)=>{
+    e.preventDefault();
+       
+      emailjs.sendForm(
+            'service_jzrwcxq',
+            'template_q7qarex',
+             form.current,
+             'ZPkR47gBF-bFMnrBX'
+      ).then(
+        (result) => {
+          console.log(result.text);
+          setMessage("Message sent successfully!");
+          form.current.reset(); // Reset the form after successful submission
+        },
+        (error) => {
+          console.log(error.text);
+          setErroMessage("Failed to send message. Please try again later.");
+        }
+      )
+       
+      
+     
+
+  }
+
+
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -73,23 +104,37 @@ export default function FooterAnimation() {
           </p>
 
           </div>
+
+          <form ref={form} onSubmit={sendEmail}>
           <div className="max-w-xl grid grid-cols-1 gap-4">
                <div className="grid gap-1.5">
               <Label htmlFor="name">Your Name</Label>
-             <Input type="name" placeholder="John"/>
+             <Input type="name" name="user_name" placeholder="John" required/>
              </div>
               <div className="grid gap-1.5">
               <Label htmlFor="email">Your Email</Label>
-             <Input type="email" placeholder="john@example.com" id="email"/>
+             <Input type="email" name="user_email" placeholder="john@example.com" id="email" required/>
              </div>
              <div className="grid gap-1.5">
              <Label htmlFor="message">Your message</Label>
-            <Textarea placeholder="Type your message here." id="message"/>
+            <Textarea name="message" placeholder="Type your message here." id="message" required/>
             </div>
             <Button size="lg"  className="h-11 mt-5 animate-bounce border bg-slate-300 text-black ">
               Send me <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
+
+          {
+            message && (
+              <p className="text-green-500 mt-4">{message}</p>
+            )
+          }
+          {
+            erorrMessage && (
+              <p className="text-red-500 mt-4">{erorrMessage}</p>
+            )
+          }
+        </form>
        
       </div>
     </section>

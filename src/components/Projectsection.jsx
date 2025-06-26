@@ -21,7 +21,7 @@ export default function ProjectsSection() {
                 className="w-full h-40 object-cover rounded-md mb-4"
               />
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 className="text-xl font-semibold  text-gray-300">
                   {project.title}
                 </h3>
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
