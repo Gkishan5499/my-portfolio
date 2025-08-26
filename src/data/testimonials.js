@@ -1,27 +1,28 @@
 export const testimonial = [
-    {
-      quote:
-        "GStackAI’s AI-driven interview prep gave me the confidence I needed. I secured a top role in a leading tech company!",
-      author: "Sarah Chen",
-      image: "https://randomuser.me/api/portraits/women/75.jpg",
-      role: "Software Engineer",
-      company: "Tech Innovators Inc.",
-    },
-    {
-      quote:
-        "The real-time industry insights were invaluable. I successfully transitioned into a higher-paying role with ease!",
-      author: "Michael Rodriguez",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      role: "Product Manager",
-      company: "NextGen Startups",
-    },
-    {
-      quote:
-        "GStackAI optimized my resume, boosting its ATS score. I landed more interviews in two weeks than in the last six months!",
-      author: "Priya Patel",
-      image: "https://randomuser.me/api/portraits/women/74.jpg",
-      role: "Marketing Director",
-      company: "Global Solutions Ltd.",
-    },
-  ];
+  {
+    quote:
+      "Kishan delivered an exceptional educational website that exceeded our expectations. The user experience is seamless, and the performance is outstanding. Highly recommend for any web development project!",
+    author: "Mihir (Durgapur)",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    role: "Founder & CEO",
+    company: "Design Bird Education",
+  },
+  {
+    quote:
+      "Working with Kishan on our real estate platform was a game-changer. He transformed our vision into a modern, responsive website that our clients love. His attention to detail and technical expertise is impressive!",
+    author: "Abujom ( Arunachal Pradesh)",
+    image: "https://randomuser.me/api/portraits/women/74.jpg",
+    role: "Marketing Director",
+    company: "Meypato Real Estate",
+  },
+
+  {
+    quote:
+      "Our resort website by Kishan is absolutely stunning! The booking system works flawlessly, and the mobile experience is perfect. He truly understands modern web development and user experience design.",
+    author: "Papum Pare (Arunachal Pradesh)",
+    image: "",
+    role: "Operations Manager",
+    company: "Papum Pare Jungle Resort",
+  }
   
+]

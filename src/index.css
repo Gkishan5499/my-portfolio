@@ -35,8 +35,6 @@
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
@@ -172,6 +170,47 @@
 
 .animation-delay-2000 {
   animation-delay: 2s;
+}
+
+/* Swiper Custom Styles */
+.projects-swiper {
+  padding-bottom: 60px !important;
+}
+
+.custom-swiper-button {
+  @apply w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 flex items-center justify-center;
+}
+
+.custom-swiper-button::after {
+  @apply text-white text-xl font-bold;
+}
+
+.custom-swiper-button.swiper-button-prev::after {
+  content: "‹";
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.custom-swiper-button.swiper-button-next::after {
+  content: "›";
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.custom-swiper-pagination {
+  @apply flex items-center justify-center;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  @apply w-3 h-3 bg-white/30 rounded-full transition-all duration-300 mx-1;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  @apply bg-blue-500 scale-125;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet:hover {
+  @apply bg-white/50;
 }
 
 /* Enhanced gradient utilities */
