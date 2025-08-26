@@ -28,7 +28,9 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem}
+    --radius: 0.5rem
+  }
+  
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -53,80 +55,208 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%}
+    --chart-5: 340 75% 55%
+  }
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
   }
 
   .dark body {
     @apply bg-black text-white;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-blue-500 to-purple-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-to-b from-blue-400 to-purple-500;
+  }
 }
 
-.hero-image{
+/* Hero section animations */
+.hero-image {
   transform: rotateX(15deg) scale(1);
   transition: transform 0.5s ease-out;
-  will-change:transfrom;
-  
+  will-change: transform;
 }
 
 .hero-image.scrolled {
   transform: scale(1.05);
   transition: transform 0.4s ease;
 }
+
 .scrolled {
   transform: scale(1.05);
   transition: transform 0.4s ease;
 }
 
-
+/* Grid background with enhanced styling */
 .grid-background {
-  position:fixed;
-  top:0;
-  left: 0;
-  width:100%;
-  height: 100%;
-  background:linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.1) 1px,
-    transparent 1px 
-  ),
-  linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.grid-background::before{
-  content: "";
-  position:absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, transparent, rgba(0,0,0,0.9));
+  background: 
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px 
+    ),
+    linear-gradient(
+      to bottom, 
+      rgba(255, 255, 255, 0.05) 1px, 
+      transparent 1px
+    );
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+  animation: gridMove 20s linear infinite;
 }
 
+.grid-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
 
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
 
-@layer utilities{
-  .gradient{
+/* Animation delays for staggered effects */
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Enhanced gradient utilities */
+@layer utilities {
+  .gradient {
     @apply bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600;
   }
 
-  .gradient-title{ 
-    @apply bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600 font-extrabold tracking-tighter text-transparent bg-clip-text pb-2 pr-2;
+  .gradient-title { 
+    @apply bg-gradient-to-b from-blue-400 via-purple-400 to-pink-400 font-extrabold tracking-tighter text-transparent bg-clip-text pb-2 pr-2;
   }
 
   .menu-item {
-  @apply transition-colors duration-300 hover:text-red-500;
+    @apply transition-colors duration-300 hover:text-red-500;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* Text gradient utilities */
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25;
+  }
+
+  /* Responsive text utilities */
+  .responsive-text {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+
+  .responsive-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+  }
+
+  /* Custom animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  /* Smooth transitions */
+  .smooth-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Focus states */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+  }
 }
-  
+
+/* Enhanced card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+}
+
+/* Responsive spacing utilities */
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .responsive-gap {
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
 }
