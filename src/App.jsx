@@ -242,15 +242,9 @@ export default function App() {
                   <CardContent className="p-6">
                     <div className="flex flex-col space-y-4">
                       <div className="flex items-center space-x-4">
-                        <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary/40 transition-colors duration-300">
-                          <img
-                            src={testim.image}
-                            alt={testim.author}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
+                        
                         <div>
-                          <p className="font-semibold text-white">{testim.author}</p>
+                          <p className="font-semibold text-lg text-white">{testim.author}</p>
                           <p className="text-sm text-muted-foreground">{testim.role}</p>
                           <p className="text-sm text-primary">{testim.company}</p>
                         </div>

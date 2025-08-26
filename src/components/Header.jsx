@@ -72,7 +72,7 @@ export default function Header() {
           ))}
 
           <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300">
-            <a href="/resume.pdf">Download Resume</a>
+            <a href="/Kishan_Kumar_Resume.pdf">Download Resume</a>
           </Button>
         </nav>
 
