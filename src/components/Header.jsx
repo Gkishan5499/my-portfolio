@@ -108,7 +108,7 @@ export default function Header() {
             ))}
             <div className="pt-2">
               <Button variant="outline" size="sm" className="w-full border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300">
-                <a href="/resume.pdf">Download Resume</a>
+                <a href="/Kishan_Kumar_Resume.pdf">Download Resume</a>
               </Button>
             </div>
           </nav>
